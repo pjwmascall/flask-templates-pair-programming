@@ -1,7 +1,7 @@
 from models.events import Event
 
-event1 = Event('2022-01-15', 'CodeFest', "16", 'Conference Room B', 'Hackathon')
-event2 = Event('2022-01-16', 'CodeFest Afterparty', "20", 'Conference Room B', 'Party')
+event1 = Event('2022-01-15', 'CodeFest', "16", 'Conference Room B', 'Hackathon', "on")
+event2 = Event('2022-01-16', 'CodeFest Afterparty', "20", 'Conference Room B', 'Party', "off")
 
 events = [event1, event2]
 

@@ -9,6 +9,9 @@
 <div>
   <p>
     {{ event.date }}: <b>{{ event.name }}</b><form action='/{{ event.name }}' method="post"><input type="submit" value="Delete Event"></form>
+    {% if event.recurring == "on" %}
+      <span>&#9989;</span>
+    {% endif %}
   </p>
 </div>
 {% endfor %}
@@ -26,6 +29,8 @@
   <input type="text" name="room_location" id="room_location">
   <label for="description"> Description </label>
   <textarea name="description" id="description" cols="30" rows="3"></textarea>
+  <label for="recurring">Is the event recurring?</label>
+  <input type="checkbox" name="recurring" id="recurring">
   <input type="submit" value="Add Event">
 </form>
 
