@@ -1,6 +1,6 @@
 from flask import render_template, request
 from app import app
-from models.events_list import events, add_new_event
+from models.events_list import events, add_new_event, delete_event_from_events
 from models.events import Event
 
 @app.route('/')
@@ -16,4 +16,9 @@ def add_event():
     description = request.form["description"]
     new_event = Event(date, name, number_of_guests, room_location, description)
     add_new_event(new_event)
+    return render_template('index.html', events=events)
+
+@app.route('/<name>', methods=['POST'])
+def delete_event(name):
+    delete_event_from_events(name)
     return render_template('index.html', events=events)

@@ -8,7 +8,7 @@
 {% for event in events %}  
 <div>
   <p>
-    {{ event.date }}: <b>{{ event.name }}</b> 
+    {{ event.date }}: <b>{{ event.name }}</b><form action='/{{ event.name }}' method="post"><input type="submit" value="Delete Event"></form>
   </p>
 </div>
 {% endfor %}
